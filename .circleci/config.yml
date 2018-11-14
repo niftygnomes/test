@@ -1,15 +1,18 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.5.1
+    machine: true
+    shell: sudo /bin/bash
     steps:
-      - run:
-          name: Test
-          command: |
-            echo "It works"
+      - checkout
+      - run: ls -la /var/run/docker.sock
+      - run: docker ps -a
+      - run: docker images
+      - run: ps auxfww
+      - run: docker build -t foo .
+
 workflows:
   version: 2
-  build-and-deploy:
+  test_and_deploy:
     jobs:
       - build
