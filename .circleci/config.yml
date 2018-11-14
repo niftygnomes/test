@@ -10,7 +10,6 @@ jobs:
       - run: docker images
       - run: ps auxfww
       - run: docker build -t foo .
-
 workflows:
   version: 2
   test_and_deploy:
