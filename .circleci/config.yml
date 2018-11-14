@@ -5,6 +5,11 @@ jobs:
     shell: sudo /bin/bash
     steps:
       - checkout
+      - run:
+          name: Check docker info
+          command: |
+            docker info
+            docker version
       - run: ls -la /var/run/docker.sock
       - run: docker ps -a
       - run: docker images
