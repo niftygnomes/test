@@ -9,10 +9,6 @@ jobs:
           command: |
             set -x
             sleep $CIRCLE_BUILD_NUMBER
-            sleep $CIRCLE_BUILD_NUMBER
-            sleep $CIRCLE_BUILD_NUMBER
-            sleep $CIRCLE_BUILD_NUMBER
-            sleep $CIRCLE_BUILD_NUMBER
   deploy-job:
     docker:
       - image: circleci/ruby:2.5.1
@@ -20,7 +16,7 @@ jobs:
       - run:
           name: Test
           command: |
-            echo "Done"
+            echo "Done!"
 workflows:
   version: 2
   build-and-deploy:
