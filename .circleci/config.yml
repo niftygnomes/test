@@ -24,4 +24,3 @@ workflows:
       - deploy-job:
           requires:
             - build-job
-        
