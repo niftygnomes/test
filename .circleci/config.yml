@@ -7,7 +7,7 @@ jobs:
       - run:
           name: Test
           command: |
-            echo "It works"
+            sleep $((100 - CIRCLE_BUILD_NUMBER*25))
   deploy-job:
     docker:
       - image: circleci/ruby:2.5.1
@@ -15,10 +15,13 @@ jobs:
       - run:
           name: Test
           command: |
-            echo "It works"
+            echo "Done"
 workflows:
   version: 2
   build-and-deploy:
     jobs:
       - build-job
-      - deploy-job
+      - deploy-job:
+          requires:
+            - build-job
+        
