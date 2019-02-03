@@ -8,7 +8,11 @@ jobs:
           name: Test
           command: |
             set -x
-            sleep $CIRCLE_BUILD_NUMBER
+            sleep $CIRCLE_BUILD_NUM
+            sleep $CIRCLE_BUILD_NUM
+            sleep $CIRCLE_BUILD_NUM
+            sleep $CIRCLE_BUILD_NUM
+            sleep $CIRCLE_BUILD_NUM
   deploy-job:
     docker:
       - image: circleci/ruby:2.5.1
